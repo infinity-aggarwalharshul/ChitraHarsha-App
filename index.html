@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChitraHarsha - Visual AI Neon Glow Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom styles for the futuristic neon glow theme */
+      body {
+        background-color: #0a0a1a;
+        color: #e0e0e0;
+        font-family: "Inter", sans-serif;
+      }
+
+      .font-orbitron {
+        font-family: "Orbitron", sans-serif;
+      }
+
+      .neon-text {
+        text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff, 0 0 20px #00bfff,
+          0 0 40px #ff00ff, 0 0 80px #ff00ff;
+      }
+
+      .neon-border {
+        border: 2px solid;
+        border-image: linear-gradient(45deg, #00bfff, #ff00ff) 1;
+        box-shadow: 0 0 10px #00bfff, 0 0 20px #ff00ff;
+      }
+
+      .btn-glow {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 191, 255, 0.1),
+          rgba(255, 0, 255, 0.1)
+        );
+      }
+
+      .btn-glow:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 15px #00bfff, 0 0 30px #ff00ff;
+      }
+
+      .lightning-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .lightning {
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, #fff, transparent);
+        animation: flash 4s linear infinite;
+        opacity: 0.5;
+      }
+
+      .lightning:nth-child(1) {
+        left: 10%;
+        animation-delay: 0.5s;
+      }
+      .lightning:nth-child(2) {
+        left: 30%;
+        animation-delay: 1.5s;
+      }
+      .lightning:nth-child(3) {
+        left: 60%;
+        animation-delay: 2.5s;
+      }
+      .lightning:nth-child(4) {
+        left: 85%;
+        animation-delay: 3.5s;
+      }
+
+      @keyframes flash {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(100%);
+        }
+      }
+
+      .card-glow {
+        background: rgba(10, 10, 30, 0.5);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 191, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .card-glow:hover {
+        border-color: rgba(255, 0, 255, 0.8);
+        transform: scale(1.03);
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+      }
+
+      /* Custom scrollbar for a futuristic feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(#00bfff, #ff00ff);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(#ff00ff, #00bfff);
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Lightning Background Effect -->
+    <div class="lightning-bg">
+      <div class="lightning"></div>
+      <div class="lightning"></div>
+      <div class="lightning"></div>
+      <div class="lightning"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-black bg-opacity-50 backdrop-blur-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <!-- SVG Logo -->
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 200 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="7.5" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              d="M100 20C144.183 20 180 55.8172 180 100C180 144.183 144.183 180 100 180C55.8172 180 20 144.183 20 100C20 71.1929 36.6801 46.5668 60 35"
+              stroke="url(#paint0_linear_101_2)"
+              stroke-width="15"
+              filter="url(#glow)"
+            />
+            <path
+              d="M130 60C130 76.5685 116.569 90 100 90C83.4315 90 70 76.5685 70 60C70 43.4315 83.4315 30 100 30C109.81 30 118.491 34.8219 124 42"
+              stroke="url(#paint1_linear_101_2)"
+              stroke-width="15"
+              filter="url(#glow)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_101_2"
+                x1="20"
+                y1="100"
+                x2="180"
+                y2="100"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#00BFFF" />
+                <stop offset="1" stop-color="#FF00FF" />
+              </linearGradient>
+              <linearGradient
+                id="paint1_linear_101_2"
+                x1="70"
+                y1="60"
+                x2="130"
+                y2="60"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#FF00FF" />
+                <stop offset="1" stop-color="#00BFFF" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <h1 class="text-2xl font-orbitron font-bold neon-text">
+            ChitraHarsha
+          </h1>
+        </div>
+        <div class="hidden md:flex items-center space-x-8 text-lg">
+          <a href="#home" class="hover:text-[#00bfff] transition-colors"
+            >Home</a
+          >
+          <a
+            href="#visual-search"
+            class="hover:text-[#00bfff] transition-colors"
+            >Visual Search</a
+          >
+          <a href="#blog" class="hover:text-[#00bfff] transition-colors"
+            >Blogs</a
+          >
+          <a href="#contact" class="hover:text-[#00bfff] transition-colors"
+            >Contact Us</a
+          >
+        </div>
+        <button
+          id="loginBtn"
+          class="hidden md:block px-6 py-2 rounded-md font-bold text-white neon-border btn-glow"
+        >
+          Log In
+        </button>
+        <button class="md:hidden text-2xl">☰</button>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center text-center bg-cover bg-center"
+        style="
+          background-image: url('https://placehold.co/1920x1080/0a0a1a/e0e0e0?text=+)');
+        "
+      >
+        <div class="bg-black bg-opacity-60 p-10 rounded-lg">
+          <h2
+            class="text-5xl md:text-7xl font-orbitron font-bold uppercase neon-text mb-4"
+          >
+            Design the Future
+          </h2>
+          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            Welcome to ChitraHarsha. Craft personalized, neon-glow apparel with
+            our cutting-edge AI and 3D printing technology. Your style,
+            illuminated.
+          </p>
+          <a
+            href="#visual-search"
+            class="px-8 py-4 rounded-md font-bold text-xl text-white neon-border btn-glow inline-block"
+            >Start with an Image</a
+          >
+        </div>
+      </section>
+
+      <!-- Visual Search Section (NEW) -->
+      <section id="visual-search" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl font-orbitron font-bold mb-4">
+            AI Visual Search
+          </h2>
+          <p class="text-lg mb-12 max-w-2xl mx-auto">
+            Inspired by something? Upload an image to find matching styles,
+            extract patterns, or create entirely new designs.
+          </p>
+          <div class="max-w-3xl mx-auto p-8 card-glow rounded-lg">
+            <div
+              id="image-uploader"
+              class="border-4 border-dashed border-gray-600 rounded-lg p-10 cursor-pointer hover:border-[#00bfff] transition-all"
+            >
+              <input
+                type="file"
+                id="file-input"
+                class="hidden"
+                accept="image/*"
+              />
+              <div id="uploader-content">
+                <svg
+                  class="mx-auto h-16 w-16 text-gray-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 16a4 4 0 01-4-4V6a4 4 0 014-4h10a4 4 0 014 4v6a4 4 0 01-4 4H7z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <p class="mt-4 text-lg">
+                  Click to upload or drag & drop an image
+                </p>
+                <p class="text-sm text-gray-400">PNG, JPG, GIF up to 10MB</p>
+              </div>
+              <div id="image-preview-container" class="hidden">
+                <img
+                  id="image-preview"
+                  src=""
+                  alt="Image Preview"
+                  class="max-h-64 mx-auto rounded-lg"
+                />
+                <p id="image-name" class="mt-4 text-lg"></p>
+              </div>
+            </div>
+            <button
+              id="scan-button"
+              class="mt-8 px-8 py-3 rounded-md font-bold text-white neon-border btn-glow hidden"
+            >
+              Scan with AI
+            </button>
+            <div id="ai-results" class="mt-8 text-left hidden">
+              <h3 class="text-2xl font-orbitron font-bold mb-4 text-center">
+                AI Analysis Complete
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-4 rounded-lg bg-gray-900">
+                  <h4 class="text-lg font-bold text-[#00bfff] mb-2">
+                    Dominant Colors
+                  </h4>
+                  <div class="flex space-x-2">
+                    <div
+                      class="w-8 h-8 rounded"
+                      style="background-color: #3b82f6"
+                    ></div>
+                    <div
+                      class="w-8 h-8 rounded"
+                      style="background-color: #10b981"
+                    ></div>
+                    <div
+                      class="w-8 h-8 rounded"
+                      style="background-color: #f59e0b"
+                    ></div>
+                  </div>
+                </div>
+                <div class="p-4 rounded-lg bg-gray-900">
+                  <h4 class="text-lg font-bold text-[#ff00ff] mb-2">
+                    Suggested Fabrics
+                  </h4>
+                  <p>Cotton Blend, Tech Weave, Satin</p>
+                </div>
+              </div>
+              <p class="mt-4">
+                Our AI suggests a unisex hoodie with a 3D print inspired by the
+                image's core pattern.
+                <a href="#" class="font-bold text-[#00bfff] hover:underline"
+                  >Proceed to 3D Designer &rarr;</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl font-orbitron font-bold mb-12">
+            Powered by Tomorrow's Technology
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="p-6 rounded-lg card-glow">
+              <h3 class="text-2xl font-bold font-orbitron mb-3 text-[#00bfff]">
+                3D Logo Prints
+              </h3>
+              <p>
+                Visualize and print intricate 3D logos that pop. Our technology
+                brings depth and life to your designs on any fabric.
+              </p>
+            </div>
+            <div class="p-6 rounded-lg card-glow">
+              <h3 class="text-2xl font-bold font-orbitron mb-3 text-[#00bfff]">
+                AI Size-Fit
+              </h3>
+              <p>
+                Upload a photo and let our advanced AI model suggest the perfect
+                size for a flawless fit, every time. All body types included.
+              </p>
+            </div>
+            <div class="p-6 rounded-lg card-glow">
+              <h3 class="text-2xl font-bold font-orbitron mb-3 text-[#ff00ff]">
+                Quantum Speed
+              </h3>
+              <p>
+                Our design rendering is powered by simulated Quantum &
+                Supercomputer tech, offering unparalleled speed and complexity.
+              </p>
+            </div>
+            <div class="p-6 rounded-lg card-glow">
+              <h3 class="text-2xl font-bold font-orbitron mb-3 text-[#ff00ff]">
+                ChitraHarsha Coin (CHC)
+              </h3>
+              <p>
+                Use our native cryptocurrency for exclusive discounts, NFT
+                ownership of your designs, and secure, decentralized payments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Freemium/Pricing Section -->
+      <section id="pricing" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl font-orbitron font-bold mb-12">
+            Choose Your Creative Tier
+          </h2>
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-8"
+          >
+            <div
+              class="p-8 rounded-lg card-glow border-2 border-[#00bfff] w-full md:w-1/3"
+            >
+              <h3 class="text-3xl font-orbitron font-bold mb-4">Explorer</h3>
+              <p class="text-5xl font-bold mb-4">Free</p>
+              <ul class="text-left space-y-2 mb-8">
+                <li>✓ Basic 3D design tools</li>
+                <li>✓ Community design gallery</li>
+                <li>✗ AI Visual Search</li>
+                <li>✗ AI Photo Sizing</li>
+                <li>✗ Premium logo assets</li>
+              </ul>
+              <button
+                class="w-full px-6 py-3 rounded-md font-bold text-white neon-border btn-glow"
+              >
+                Start for Free
+              </button>
+            </div>
+            <div
+              class="p-8 rounded-lg card-glow border-2 border-[#ff00ff] w-full md:w-1/3 transform md:scale-110"
+            >
+              <h3 class="text-3xl font-orbitron font-bold mb-4 text-[#ff00ff]">
+                Visionary
+              </h3>
+              <p class="text-5xl font-bold mb-4">
+                ₹999 <span class="text-lg">/mo</span> | $19
+                <span class="text-lg">/mo</span>
+              </p>
+              <ul class="text-left space-y-2 mb-8">
+                <li>✓ All Explorer features</li>
+                <li>✓ AI Visual Search & Pattern Extraction</li>
+                <li>✓ AI Photo Sizing & Suggestions</li>
+                <li>✓ Access all premium 3D logos</li>
+                <li>✓ Save and share unlimited designs</li>
+              </ul>
+              <button
+                class="w-full px-6 py-3 rounded-md font-bold text-white neon-border btn-glow"
+                style="
+                  border-image: linear-gradient(45deg, #ff00ff, #ff00ff) 1;
+                  box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+                "
+              >
+                Go Premium
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-orbitron font-bold text-center mb-12">
+            From Our Blog
+          </h2>
+          <div
+            class="max-w-4xl mx-auto card-glow rounded-lg overflow-hidden flex flex-col md:flex-row"
+          >
+            <img
+              src="https://placehold.co/600x400/0a0a1a/e0e0e0?text=AI+Fashion+Scan"
+              alt="Blog Post Image"
+              class="w-full md:w-1/2 object-cover"
+            />
+            <div class="p-8">
+              <h3 class="text-2xl font-bold font-orbitron mb-4 text-[#00bfff]">
+                Beyond the Lens: How Image Recognition is Redefining Personal
+                Style
+              </h3>
+              <p class="mb-4">
+                Imagine seeing a pattern on a building or a color gradient in a
+                sunset and instantly turning it into a piece of clothing. This
+                is no longer science fiction. At ChitraHarsha, our new Visual
+                Search uses advanced computer vision to make the world your mood
+                board...
+              </p>
+              <a href="#" class="font-bold text-[#ff00ff] hover:underline"
+                >Read More &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Get in Touch Section -->
+      <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+          <h2 class="text-4xl font-orbitron font-bold mb-4">Get In Touch</h2>
+          <p class="mb-8">
+            Have questions about a custom project or our technology? We'd love
+            to hear from you.
+          </p>
+          <form class="space-y-6">
+            <div class="flex flex-col md:flex-row gap-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:border-[#00bfff]"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:border-[#00bfff]"
+              />
+            </div>
+            <textarea
+              placeholder="Your Message"
+              rows="5"
+              class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:outline-none focus:border-[#00bfff]"
+            ></textarea>
+            <button
+              type="submit"
+              class="px-8 py-3 rounded-md font-bold text-white neon-border btn-glow"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-70 pt-12 pb-8">
+      <div class="container mx-auto px-6 text-center">
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-500 mb-4 md:mb-0">
+            &copy; 2025 ChitraHarsha. All Rights Reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#faq" class="hover:text-[#00bfff] text-gray-400">FAQs</a>
+            <a href="#privacy" class="hover:text-[#00bfff] text-gray-400"
+              >Privacy Policy</a
+            >
+            <a href="#terms" class="hover:text-[#00bfff] text-gray-400"
+              >Terms & Conditions</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chatbot Floating Icon -->
+    <div
+      class="fixed bottom-5 right-5 w-16 h-16 bg-gradient-to-br from-[#00bfff] to-[#ff00ff] rounded-full flex items-center justify-center cursor-pointer card-glow animate-pulse"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 text-white"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+        />
+      </svg>
+    </div>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Image Uploader Logic
+      const uploader = document.getElementById("image-uploader");
+      const fileInput = document.getElementById("file-input");
+      const uploaderContent = document.getElementById("uploader-content");
+      const previewContainer = document.getElementById(
+        "image-preview-container"
+      );
+      const preview = document.getElementById("image-preview");
+      const imageName = document.getElementById("image-name");
+      const scanButton = document.getElementById("scan-button");
+      const aiResults = document.getElementById("ai-results");
+
+      uploader.addEventListener("click", () => fileInput.click());
+      fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            preview.src = e.target.result;
+            imageName.textContent = file.name;
+            uploaderContent.classList.add("hidden");
+            previewContainer.classList.remove("hidden");
+            scanButton.classList.remove("hidden");
+            aiResults.classList.add("hidden");
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      scanButton.addEventListener("click", () => {
+        // Simulate AI processing
+        scanButton.textContent = "Scanning...";
+        scanButton.disabled = true;
+        setTimeout(() => {
+          aiResults.classList.remove("hidden");
+          scanButton.textContent = "Scan with AI";
+          scanButton.disabled = false;
+        }, 2000); // 2-second delay for simulation
+      });
+    </script>
+  </body>
+</html>
